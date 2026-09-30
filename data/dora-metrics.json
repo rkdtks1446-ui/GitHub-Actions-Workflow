@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "repository": "rkdtks1446-ui/GitHub-Actions-Workflow",
-  "generated_at": null,
+  "generated_at": "2026-09-30T07:53:41.267329Z",
   "window_days": 90,
   "coverage": "no-production-deployments",
   "coverage_message": "No production deployment records yet. Configure a production environment on the deploy workflow.",
@@ -15,5 +15,104 @@
     "failed_changes": 0,
     "resolved_incidents": 0
   },
-  "series": []
+  "series": [
+    {
+      "week_start": "2026-06-29",
+      "lead_time_hours": null,
+      "deployment_frequency_per_week": 0,
+      "mttr_hours": null,
+      "change_failure_rate": null
+    },
+    {
+      "week_start": "2026-07-06",
+      "lead_time_hours": null,
+      "deployment_frequency_per_week": 0,
+      "mttr_hours": null,
+      "change_failure_rate": null
+    },
+    {
+      "week_start": "2026-07-13",
+      "lead_time_hours": null,
+      "deployment_frequency_per_week": 0,
+      "mttr_hours": null,
+      "change_failure_rate": null
+    },
+    {
+      "week_start": "2026-07-20",
+      "lead_time_hours": null,
+      "deployment_frequency_per_week": 0,
+      "mttr_hours": null,
+      "change_failure_rate": null
+    },
+    {
+      "week_start": "2026-07-27",
+      "lead_time_hours": null,
+      "deployment_frequency_per_week": 0,
+      "mttr_hours": null,
+      "change_failure_rate": null
+    },
+    {
+      "week_start": "2026-08-03",
+      "lead_time_hours": null,
+      "deployment_frequency_per_week": 0,
+      "mttr_hours": null,
+      "change_failure_rate": null
+    },
+    {
+      "week_start": "2026-08-10",
+      "lead_time_hours": null,
+      "deployment_frequency_per_week": 0,
+      "mttr_hours": null,
+      "change_failure_rate": null
+    },
+    {
+      "week_start": "2026-08-17",
+      "lead_time_hours": null,
+      "deployment_frequency_per_week": 0,
+      "mttr_hours": null,
+      "change_failure_rate": null
+    },
+    {
+      "week_start": "2026-08-24",
+      "lead_time_hours": null,
+      "deployment_frequency_per_week": 0,
+      "mttr_hours": null,
+      "change_failure_rate": null
+    },
+    {
+      "week_start": "2026-08-31",
+      "lead_time_hours": null,
+      "deployment_frequency_per_week": 0,
+      "mttr_hours": null,
+      "change_failure_rate": null
+    },
+    {
+      "week_start": "2026-09-07",
+      "lead_time_hours": null,
+      "deployment_frequency_per_week": 0,
+      "mttr_hours": null,
+      "change_failure_rate": null
+    },
+    {
+      "week_start": "2026-09-14",
+      "lead_time_hours": null,
+      "deployment_frequency_per_week": 0,
+      "mttr_hours": null,
+      "change_failure_rate": null
+    },
+    {
+      "week_start": "2026-09-21",
+      "lead_time_hours": null,
+      "deployment_frequency_per_week": 0,
+      "mttr_hours": null,
+      "change_failure_rate": null
+    },
+    {
+      "week_start": "2026-09-28",
+      "lead_time_hours": null,
+      "deployment_frequency_per_week": 0,
+      "mttr_hours": null,
+      "change_failure_rate": null
+    }
+  ]
 }
