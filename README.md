@@ -20,7 +20,7 @@ GitHub Actions 기반으로 DORA 4대 지표를 수집하고 Chart.js 대시보�
 1. 매일 UTC 02:17, production 배포 성공, 또는 수동 실행 시 최근 90일 데이터를 GitHub REST API에서 수집합니다.
 2. `data/dora-metrics.json`을 갱신하고 `dora-metrics-json-<run number>` artifact로 업로드해 90일 보관합니다.
 3. 매주 월요일 UTC 03:17 직전 완전한 UTC 주의 지표를 `reports/weekly/YYYY-MM-DD.md`로 생성하고 `reports/weekly/latest.md`도 갱신합니다.
-4. 주간 보고서를 `dora-weekly-report-<run number>` artifact로 업로드해 365일 보관하고 저장소에도 커밋합니다.
+4. 주간 보고서를 `dora-weekly-report-<run number>` artifact로 업로드해 90일 보관하고 저장소에도 커밋합니다.
 
 ## 결과물
 

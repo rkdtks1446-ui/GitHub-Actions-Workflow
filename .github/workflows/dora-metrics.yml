@@ -83,7 +83,7 @@ jobs:
           name: dora-weekly-report-${{ github.run_number }}
           path: reports/weekly/*.md
           if-no-files-found: error
-          retention-days: 365
+          retention-days: 90
 
       - name: Commit weekly report
         run: |
