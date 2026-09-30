@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "repository": "rkdtks1446-ui/GitHub-Actions-Workflow",
+  "generated_at": null,
+  "window_days": 90,
+  "coverage": "no-production-deployments",
+  "coverage_message": "No production deployment records yet. Configure a production environment on the deploy workflow.",
+  "summary": {
+    "lead_time_hours": null,
+    "deployment_frequency_per_week": null,
+    "mttr_hours": null,
+    "change_failure_rate": null,
+    "production_deployments": 0,
+    "deployed_changes": 0,
+    "failed_changes": 0,
+    "resolved_incidents": 0
+  },
+  "series": []
+}

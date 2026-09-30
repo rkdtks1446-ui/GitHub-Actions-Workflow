@@ -1,0 +1,96 @@
+name: Collect DORA metrics
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/dora-metrics.yml'
+      - 'scripts/**'
+      - 'tests/**'
+  schedule:
+    - cron: '17 2 * * *'
+    - cron: '17 3 * * 1'
+  workflow_dispatch:
+  deployment_status:
+
+permissions:
+  contents: write
+  deployments: read
+  issues: read
+  pull-requests: read
+
+concurrency:
+  group: dora-metrics-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    if: github.event_name != 'deployment_status' || (github.event.deployment.environment == 'production' && github.event.deployment_status.state == 'success')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Test DORA calculations
+        run: python -m unittest discover -s tests -v
+
+      - name: Collect last 90 days
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPOSITORY: ${{ github.repository }}
+        run: python scripts/collect_dora.py --output data/dora-metrics.json --days 90
+
+      - name: Upload DORA JSON artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dora-metrics-json-${{ github.run_number }}
+          path: data/dora-metrics.json
+          if-no-files-found: error
+          retention-days: 90
+
+      - name: Commit updated metrics
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/dora-metrics.json
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: update DORA metrics"
+            git push
+          fi
+
+  weekly-report:
+    if: github.event_name == 'schedule' && github.event.schedule == '17 3 * * 1'
+    needs: collect
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out latest main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Download this run's DORA JSON artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: dora-metrics-json-${{ github.run_number }}
+          path: data
+
+      - name: Generate previous week's report
+        run: python scripts/generate_weekly_report.py --input data/dora-metrics.json --output reports/weekly/latest.md
+
+      - name: Upload weekly report artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dora-weekly-report-${{ github.run_number }}
+          path: reports/weekly/*.md
+          if-no-files-found: error
+          retention-days: 365
+
+      - name: Commit weekly report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reports/weekly/*.md
+          if ! git diff --cached --quiet; then
+            git commit -m "docs: publish weekly DORA report"
+            git push
+          fi
