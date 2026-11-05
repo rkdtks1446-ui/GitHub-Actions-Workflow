@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "repository": "rkdtks1446-ui/GitHub-Actions-Workflow",
-  "generated_at": "2026-11-04T09:23:59.140367Z",
+  "generated_at": "2026-11-05T09:34:34.806566Z",
   "window_days": 90,
   "coverage": "no-production-deployments",
   "coverage_message": "No production deployment records yet. Configure a production environment on the deploy workflow.",
