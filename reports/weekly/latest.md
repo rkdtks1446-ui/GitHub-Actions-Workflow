@@ -1,7 +1,7 @@
-# DORA 주간 보고서 (2026-10-26 ~ 2026-11-01)
+# DORA 주간 보고서 (2026-11-02 ~ 2026-11-08)
 
 - 저장소: `rkdtks1446-ui/GitHub-Actions-Workflow`
-- 생성 시각(UTC): `2026-11-02T11:16:10.392801Z`
+- 생성 시각(UTC): `2026-11-09T11:39:20.581842Z`
 - 데이터 상태: No production deployment records yet. Configure a production environment on the deploy workflow.
 
 ## 직전 주 지표
